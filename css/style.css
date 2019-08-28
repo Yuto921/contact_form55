@@ -1,4 +1,5 @@
 body {
+    background-color: whitesmoke;
     margin: 0;
     padding: 0;
     padding-top: 100px;
@@ -16,7 +17,7 @@ body {
 
 .title {
     font-size: 43px;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid rgb(5, 103, 148);
 }
 
 .form-group {
@@ -36,4 +37,16 @@ body {
 
 button {
     margin-top: 50px;
+}
+
+input, textarea {
+    margin-top: 10px;
+}
+
+input:hover, textarea:hover {
+    cursor: pointer;
+}
+
+.borderChange {
+    border: 2px solid gray;
 }

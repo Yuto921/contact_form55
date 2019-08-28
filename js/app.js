@@ -18,6 +18,15 @@ $(function(){
     });
 
 
+    //フォーム部分にマウスが乗ったら、軽くスタイル
+    $('input, textarea').each(function(index, element){
+        $(element).on('mouseover', function(){
+            $(this).addClass('borderChange');     
+        }).on('mouseout', function(){
+            $(this).removeClass('borderChange');
+        });
+    });
+
 
 
 
