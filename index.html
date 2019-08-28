@@ -8,17 +8,27 @@
 </head>
 <body>
     <h1>お問い合わせ情報入力</h1>
-    <form action="">
+    <!-- action: 送信先のURLの指定 -->
+    <!-- method: 送信方法 (GET or POST) -->
+    <form action="check.php" method="POST">
         <div>
             <!-- labelのforとinputのidが一緒のとき=フォーカスが当たる -->
             <label for="name">名前</label><br>
-            <input id="name" type="text">
-            <input type="submit" value="送信">
+            <!-- name=""がPHPの$_POST(連想配列)のキーの部分になっている　（htmlのname属性=$_POST['キー']） -->
+            <input id="name" type="text" name="username">
         </div>
 
         <div>
             <label for="email">メールアドレス</label><br>
-            <input id="email" type="text">
+            <input id="email" type="text" name="email">
+        </div>
+
+        <div>
+            <label for="content">お問い合わせ</label><br>
+            <textarea name="content" id="content">
+
+            </textarea>
+            <br>
             <input type="submit" value="送信">
         </div>
     </form>
