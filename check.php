@@ -1,4 +1,21 @@
 <?php
+// このページが表示された時の送信方法 (GET送信 or POST送信)の確認
+// GET送信の場合は、入力画面に遷移する
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    // このページを表示する際の送信がGETの場合
+    // index.html に遷移する
+    header('Location: index.html');
+}
+
+
+// functions.phpを読み込んで、定義した関数を使えるようにする
+require_once('functions.php');
+
+
+
+
+
 // スーパーグローバル変数(定義済み変数)
 // (PHPがもともと用意している変数・・役割を持っている)
 
@@ -6,9 +23,15 @@
 
 
 // 送信されてきた値の取得
-$username = $_POST['username'];
-$email = $_POST['email'];
-$content = $_POST['content'];
+// エスケープ処理をして、XSS(クロスサイトスクリプティング)の対策をする
+
+// エスケープ処理：htmlspecialchars
+// htmlspecialchars(対象の文字, オプション, 文字コード)
+$username = h($_POST['username']);
+// $username = h('Yoneda']); -> h ('Yoneda') { htmlspecialchars(hoge hoge) return 'Yoneda'; }
+
+$email = h($_POST['email']);
+$content = h($_POST['content']);
 
 // ユーザー名が空かチェック
 if ($username == '') { // (!$username)はやらない*他の言語でエラーになるから
@@ -71,12 +94,19 @@ if ($content == '') {
 
 
         <div id="form">
-            <form action="index.html">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">戻る</button>
-                <br>
-            </form>
+            <!-- <form action="index.html"> 何かを送信するためのものだから、戻るときは、jsで操作した方がスマート -->
+                <!-- <button type="submit" class="btn btn-primary btn-lg btn-block">戻る</button> -->
 
-            <form action="thanks.php">
+                <!-- type="button" onclick="history.back();" で一個前に戻るjs -->
+                <button type="button" onclick="history.back();" class="btn btn-primary btn-lg btn-block">戻る</button>
+                <br>
+            <!-- </form> -->
+
+            <form action="thanks.php" method="POST">
+                <!-- リクエストスコープ　裏で隠しながら -->
+                <input type="hidden" name="username" value="<?php echo $username;?>">
+                <input type="hidden" name="email" value="<?php echo $email;?>">
+                <input type="hidden" name="content" value="<?php echo $content;?>">
                 <button type="submit" class="btn btn-primary btn-lg btn-block my-red">OK</button>
             </form>
 
