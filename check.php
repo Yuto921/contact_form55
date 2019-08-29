@@ -75,7 +75,8 @@ if ($content == '') {
                 <button type="submit" class="btn btn-primary btn-lg btn-block">戻る</button>
                 <br>
             </form>
-            <form action="">
+
+            <form action="thanks.php">
                 <button type="submit" class="btn btn-primary btn-lg btn-block my-red">OK</button>
             </form>
 
