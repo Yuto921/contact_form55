@@ -11,12 +11,24 @@
 
     //1. functions.phpを読み込む
     require_once('functions.php');
+    require_once('dbconnect.php'); //データベース管理ファイルを読み込む
     var_dump($_POST);
     //2. $_POSTから送信された値を取得 (エスケープ処理も)
     $username = h($_POST['username']);
     $email = h($_POST['email']);
     $content = h($_POST['content']);
     //3. 値を画面に表示する
+
+    // 受け取った値(check.phpのhiddenで飛んできた値)をもとに、データベースに登録
+    // prepare()のなかに準備して、$stmtの入れる
+    // ? : SQLインジェクションの対策 (攻撃から守る) (例)名前のところにSQL文を書いて、ログインのユーザー情報を取ってこれる
+
+    // SQLの準備 -> $stmtに入ってる
+    $stmt = $dbh->prepare( 'INSERT INTO surveys (username, email, content, created_at) VALUES (?, ?, ?, now())' );
+
+    // SQLを実行
+    // ? の部分に当たる値を配列で渡す
+    $stmt->execute([$username, $email, $content]);
 
 ?>
 
