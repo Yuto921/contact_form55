@@ -16,8 +16,33 @@
     // 準備したものを実行 //もし、 ? の部分に当たる値を配列で渡す
     $stmt->execute();
 
+    /*
+
+    class 〇〇 {
+
+        $kekka = []
+
+        method ▲▲;
+        method ▲▲;
+        method ▲▲;
+
+        function execute() {
+            $kekka = fdsafaf;
+        }
+
+        function fetchAll()
+        {
+            return $kekka;
+        }
+    }
+
+    */
+
+
     // 取得した一覧を変数に格納 fetchAll(全件の検索結果)
     $results = $stmt->fetchAll();
+
+
 
     // var_dump($results); //データベースからの値を [配列] で返す  キーと値のセット
 
