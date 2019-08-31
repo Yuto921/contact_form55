@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    width: 80%;
+}
+
+.title {
+    font-size: 43px;
+    text-align: center;
+}
+
+#name,
+#email,
+#contact {
+    width: 80%;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+
+#name p,
+#email p,
+#contact p {
+
+}

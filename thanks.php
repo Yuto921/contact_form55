@@ -40,12 +40,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>送信完了</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style-thanks.css">
 </head>
 <body>
-    <h1>お問い合わせありがとうございました。</h1>
-    <p>名前:<?php echo $username; ?></p>
-    <p>メールアドレス:<?php echo $email; ?></p>
-    <p>お問い合わせ内容:<?php echo $content; ?></p>
+
+<div id="contents">
+
+    <div id="title">
+        <i class="fas fa-map-marker fa-5x fa-fw"></i><span class="title">お問い合わせありがとうございました。</span>
+    </div>
+    <div id="name">
+        <i class="far fa-user-circle fa-3x fa-fw"></i>　<p>名前:<?php echo $username; ?></p>
+    </div>
+    <div id="email">
+        <i class="far fa-envelope fa-3x fa-fw"></i>　<p>メールアドレス:<?php echo $email; ?></p>
+    </div>
+    <div id="contact">
+        <i class="far fa-comment fa-3x fa-fw"></i>　<p>お問い合わせ内容:<?php echo $content; ?></p>
+    </div>
     
+</div>
+
+    <script src="https://kit.fontawesome.com/c8b873bcaa.js"></script>
 </body>
 </html>
