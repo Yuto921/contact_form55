@@ -4,7 +4,8 @@
 }
 
 #contents {
-    width: 100%;
+    margin-top: 100px;
+    margin-left: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,11 +14,13 @@
 
 #title {
     width: 80%;
+    margin-bottom: 70px;
 }
 
 .title {
     font-size: 43px;
     text-align: center;
+    border-bottom: 2px solid blueviolet;
 }
 
 #name,
@@ -27,6 +30,7 @@
     font-size: 32px;
     display: flex;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 #name p,

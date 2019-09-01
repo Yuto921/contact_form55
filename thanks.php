@@ -12,11 +12,13 @@
     //1. functions.phpを読み込む
     require_once('functions.php');
     require_once('dbconnect.php'); //データベース管理ファイルを読み込む
-    var_dump($_POST);
+    // var_dump($_POST);
     //2. $_POSTから送信された値を取得 (エスケープ処理も)
+    
     $username = h($_POST['username']);
     $email = h($_POST['email']);
-    $content = h($_POST['content']);
+    $content = h($_POST['content']);    
+
     //3. 値を画面に表示する
 
     // 受け取った値(check.phpのhiddenで飛んできた値)をもとに、データベースに登録
