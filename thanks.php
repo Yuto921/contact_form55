@@ -63,6 +63,12 @@
         <i class="far fa-comment fa-3x fa-fw"></i>　<p>お問い合わせ内容:<?php echo $content; ?></p>
     </div>
     
+
+    <div>
+        <a href="view.php">
+            <button>お問い合わせ一覧を見る</button>
+        </a>
+    </div>
 </div>
 
     <script src="https://kit.fontawesome.com/c8b873bcaa.js"></script>

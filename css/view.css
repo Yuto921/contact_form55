@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 40px 0px 50px 200px;
+}
+
+.div:first-child {
+    margin-bottom: 100px;
+    margin-left: 650px;
+}
+
+.div h1 {
+    font-size: 44px;
+    border-bottom: 2px solid goldenrod;
+}
+
+.div p {
+    margin-top: 20px; 
+    font-size: 32px;
+    text-align: center;
+}
+
+.div:last-child {
+    margin-bottom: 200px;
+}
+
+hr {
+    border: 2px solid gray;
+}
+
+.name {
+    border-bottom: 2px solid lightcoral;
+}
+
+.email {
+    border-bottom: 2px solid lightblue;
+}
+
+.content {
+    border-bottom: 2px solid lightyellow;
+}
